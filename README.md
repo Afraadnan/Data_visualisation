@@ -1,65 +1,93 @@
-# Data_visualisation
-# ✈️ An Aircrash Saga (1908–2024) – Data Visualization Project
+# ✈️ Aircrash Dashboard (1908–2024)
 
-## 📊 Overview
+## 📊 Project Overview
 
-**“An Aircrash Saga (1908–2024)”** is a data visualization project exploring over a century of global aviation incidents. Using R and a dataset sourced from [planecrashinfo.com](http://www.planecrashinfo.com/database.html), this project uncovers critical patterns, crash causes, survival rates, and geographic trends that impact aviation safety.
-
-The goal is to raise awareness about flight risks, inform safety improvements, and apply visualization best practices to real-world data.
-
----
-
-## 🎯 Key Highlights
-
-- Analyzed **4,967 crash records** with 17+ variables
-- Preprocessed data: handled NULLs, outliers, date formats, categorical encoding
-- Explored **5 research questions** covering trends, causes, aircraft/operator risks, geography, and survival rates
-- Generated 10+ impactful visualizations (line plots, heatmaps, word clouds, donut charts, interactive maps)
-- Built using R packages: `ggplot2`, `leaflet`, `dplyr`, `lubridate`
-
----
-
-## 🔍 Research Questions
-
-1. **How have airplane crashes evolved over time?**
-   - Peak observed in 1946 (see Figure 2); steady decline post-1980s due to tech and safety protocols.
-
-2. **Which aircraft types and airline operators had the most incidents?**
-   - Douglas DC-3 and Aeroflot were most crash-prone due to fleet size and historical use (Figures 4–5).
-
-3. **What are the leading causes of air crashes?**
-   - Human error and mechanical failure dominate; visualized in horizontal bar chart (Figure 6).
-
-4. **How does geography affect crash frequency and fatality rate?**
-   - Russia and Pakistan had higher incidents due to terrain and traffic density (Figure 7 heatmap).
-
-5. **What is the survival rate in crashes?**
-   - Only **46.1% survive** on average; larger aircraft had better survival odds (Figures 8–11).
-
----
-
-## 📦 Tools & Technologies
-
-| Category | Tools |
-|---------|-------|
-| Language | R |
-| Visualization | ggplot2, leaflet, wordcloud |
-| Data Wrangling | dplyr, lubridate |
-| Data Source | [planecrashinfo.com](http://www.planecrashinfo.com/database.html) |
-| Format | R Markdown Report (PDF/HTML) |
+This R-based dashboard explores global aviation incidents over the past century using rich visualizations and curated insights. Built as part of a university data visualization course, the project covers crash trends, causes, survival rates, and geospatial patterns — all using cleaned, transformed real-world data.
 
 ---
 
 ## 🗂️ Project Structure
 
-```bash
-📁 aircrash-visualisation/
-├── aircrash_analysis.Rmd
-├── cleaned_data.csv
-├── figures/
-│   ├── fig2_trends_linegraph.png
-│   ├── fig6_crash_causes_bar.png
-│   ├── fig10_heatmap.png
-│   └── ...
-├── README.md
-└── report.pdf
+📦 Aircrash Dashboard Project/
+├── 📁 www/ # Contains images, background videos, icons used in dashboard UI
+├── Aircrash.R # Data cleaning and wrangling script
+├── airplane-crash-dashboard.r # Main R Shiny dashboard script
+├── DataVis(CW-1).Rproj # R project file
+├── .RData, .Rhistory # R session and history files
+├── processed_data.csv # Cleaned version of crash dataset
+├── Airplane_Crashes_and_Fatalities_1908.csv # Original raw dataset
+├── 📊 Visual Outputs:
+│ ├── BarGraph(Causes).png
+│ ├── Line_Graph.png
+│ ├── Map.png
+│ ├── PeakYear.png
+│ ├── piechart.png
+│ ├── scatter.png
+│ ├── heatmap.png
+│ ├── Histogram(Aircraft_Type).png
+│ ├── Word_Cloud(AC.Type).png
+│ └── fatality rate(causes).png
+
+yaml
+Copy
+Edit
+
+---
+
+## 🚀 Features
+
+- 📈 **Crash Trends Over Time**: Line graphs reveal historical spikes (e.g., 1946), declines, and flight safety improvements.
+- 📍 **Geospatial Mapping**: Leaflet-powered maps show country-wise incident densities.
+- 📋 **Cause Breakdown**: Bar and donut charts highlight human error and mechanical failure as dominant causes.
+- 🔢 **Fatality Analysis**: Survival rates and correlations between aircraft type, operator, and crash outcomes.
+- 🌐 **Interactive Dashboard**: (If using Shiny) integrated with images/videos from the `www/` directory for an engaging UI.
+
+---
+
+## 🧪 Tools & Technologies
+
+| Category        | Tools                         |
+|----------------|-------------------------------|
+| Language        | R                             |
+| Visualization   | ggplot2, leaflet, wordcloud   |
+| Dashboard       | R Shiny (if applicable)       |
+| Data Wrangling  | dplyr, lubridate              |
+| Data Source     | [planecrashinfo.com](http://www.planecrashinfo.com/database.html) |
+
+---
+
+## 📈 Sample Visuals
+
+- **Line Graph:** Crash count over years (`Line_Graph.png`)
+- **Heatmap:** Mortality by weather/conditions (`heatmap.png`)
+- **Word Cloud:** Frequent aircraft in crashes (`Word_Cloud(AC.Type).png`)
+- **Scatter Plot:** Aboard passengers vs fatality rate (`scatter.png`)
+- **Map:** Crash frequency by region (`Map.png`)
+
+---
+
+## 📂 Dataset Info
+
+- **Raw Data**: `Airplane_Crashes_and_Fatalities_1908.csv`
+- **Cleaned & Transformed**: `processed_data.csv`  
+  > Includes imputation, outlier handling, column standardization, and encoding of categorical variables.
+
+---
+
+## 📖 How to Run
+
+1. Open `DataVis(CW-1).Rproj` in RStudio
+2. Run `Aircrash.R` to process and clean data
+3. Open `airplane-crash-dashboard.r` (if dashboard included)
+4. Run the app using:
+```r
+shiny::runApp()
+Ensure the www/ folder remains in the same directory — it powers the visual media inside the app.
+
+✍️ Author
+Afra Adnan Qadir
+BSc Software Engineering – University of Nottingham Malaysia
+LinkedIn | GitHub
+
+📜 License
+MIT License. Educational use only. Attribution appreciated.
