@@ -1,93 +1,123 @@
+
+
 # ✈️ Aircrash Dashboard (1908–2024)
 
-## 📊 Project Overview
+## 📊 Overview
 
-This R-based dashboard explores global aviation incidents over the past century using rich visualizations and curated insights. Built as part of a university data visualization course, the project covers crash trends, causes, survival rates, and geospatial patterns — all using cleaned, transformed real-world data.
+This project is a data visualization of global airplane crashes from **1908 to 2024**, built using **R** and real-world aviation data from [planecrashinfo.com](http://www.planecrashinfo.com/database.html). It explores patterns across time, geography, causes, aircraft types, and fatality rates through impactful visualizations and analysis.
 
 ---
 
 ## 🗂️ Project Structure
 
-📦 Aircrash Dashboard Project/
-├── 📁 www/ # Contains images, background videos, icons used in dashboard UI
-├── Aircrash.R # Data cleaning and wrangling script
-├── airplane-crash-dashboard.r # Main R Shiny dashboard script
-├── DataVis(CW-1).Rproj # R project file
-├── .RData, .Rhistory # R session and history files
-├── processed_data.csv # Cleaned version of crash dataset
-├── Airplane_Crashes_and_Fatalities_1908.csv # Original raw dataset
-├── 📊 Visual Outputs:
-│ ├── BarGraph(Causes).png
-│ ├── Line_Graph.png
-│ ├── Map.png
-│ ├── PeakYear.png
-│ ├── piechart.png
-│ ├── scatter.png
-│ ├── heatmap.png
-│ ├── Histogram(Aircraft_Type).png
-│ ├── Word_Cloud(AC.Type).png
-│ └── fatality rate(causes).png
-
-yaml
-Copy
-Edit
+- `www/` – Background videos and UI images
+- `Aircrash.R` – R script for data cleaning and wrangling
+- `airplane-crash-dashboard.r` – (Optional) R Shiny dashboard script
+- `DataVis(CW-1).Rproj` – RStudio project file
+- `Airplane_Crashes_and_Fatalities_Since_1908.csv` – Raw dataset
+- `processed_data.csv` – Cleaned dataset
+- Visual Output Files:
+  - `BarGraph(Causes).png`
+  - `Line_Graph.png`
+  - `Map.png`
+  - `PeakYear.png`
+  - `piechart.png`
+  - `scatter.png`
+  - `heatmap.png`
+  - `Histogram(Aircraft_Type).png`
+  - `Word_Cloud(AC.Type).png`
+  - `fatality rate(causes).png`
 
 ---
 
 ## 🚀 Features
 
-- 📈 **Crash Trends Over Time**: Line graphs reveal historical spikes (e.g., 1946), declines, and flight safety improvements.
-- 📍 **Geospatial Mapping**: Leaflet-powered maps show country-wise incident densities.
-- 📋 **Cause Breakdown**: Bar and donut charts highlight human error and mechanical failure as dominant causes.
-- 🔢 **Fatality Analysis**: Survival rates and correlations between aircraft type, operator, and crash outcomes.
-- 🌐 **Interactive Dashboard**: (If using Shiny) integrated with images/videos from the `www/` directory for an engaging UI.
+- 📈 Crash trends over time (e.g., peak in 1946)
+- 🌍 Geographical crash mapping using `leaflet`
+- ⚙️ Cause breakdowns via bar/donut charts
+- 🧮 Survival analysis by flight type and condition
+- ✈️ Aircraft/operator risk visualization
+- 📊 10+ visual outputs including heatmaps, word clouds, and histograms
 
 ---
 
-## 🧪 Tools & Technologies
+## 🛠️ Tools & Libraries
 
-| Category        | Tools                         |
-|----------------|-------------------------------|
-| Language        | R                             |
-| Visualization   | ggplot2, leaflet, wordcloud   |
-| Dashboard       | R Shiny (if applicable)       |
-| Data Wrangling  | dplyr, lubridate              |
-| Data Source     | [planecrashinfo.com](http://www.planecrashinfo.com/database.html) |
+- **Language**: R  
+- **Data Wrangling**: `dplyr`, `lubridate`  
+- **Visualization**: `ggplot2`, `leaflet`, `wordcloud`  
+- **Dashboard (optional)**: R Shiny  
+- **Data Source**: [planecrashinfo.com](http://www.planecrashinfo.com/database.html)
 
 ---
 
 ## 📈 Sample Visuals
 
-- **Line Graph:** Crash count over years (`Line_Graph.png`)
-- **Heatmap:** Mortality by weather/conditions (`heatmap.png`)
-- **Word Cloud:** Frequent aircraft in crashes (`Word_Cloud(AC.Type).png`)
-- **Scatter Plot:** Aboard passengers vs fatality rate (`scatter.png`)
-- **Map:** Crash frequency by region (`Map.png`)
+- `Line_Graph.png` – Crash trends over time  
+- `Map.png` – Country-wise crash density  
+- `BarGraph(Causes).png` – Common crash causes  
+- `fatality rate(causes).png` – Survival & mortality comparison  
+- `Word_Cloud(AC.Type).png` – Aircraft models involved  
+- `heatmap.png` – Fatality rates under weather conditions
 
 ---
 
-## 📂 Dataset Info
+## 📂 Dataset
 
-- **Raw Data**: `Airplane_Crashes_and_Fatalities_1908.csv`
-- **Cleaned & Transformed**: `processed_data.csv`  
-  > Includes imputation, outlier handling, column standardization, and encoding of categorical variables.
+- **Raw File**: `Airplane_Crashes_and_Fatalities_Since_1908.csv`  
+- **Processed**: `processed_data.csv`  
+  - Null value handling  
+  - Date/time parsing  
+  - Outlier imputation  
+  - Column transformations (e.g., Total_Aboard)
 
 ---
 
-## 📖 How to Run
+## 💡 Insights
 
-1. Open `DataVis(CW-1).Rproj` in RStudio
-2. Run `Aircrash.R` to process and clean data
-3. Open `airplane-crash-dashboard.r` (if dashboard included)
-4. Run the app using:
+- ✈️ Crash rates peaked in **1946**, then declined due to safety protocols and modern aircraft.
+- 🌧️ Weather and mechanical failure cause the deadliest crashes.
+- 📉 Only **46.1%** average survival rate across recorded events.
+- ✈️ Aircraft like the **Douglas DC-3** and operators like **Aeroflot** showed higher involvement due to high operational usage.
+
+---
+
+## 📦 How to Run the Project
+
+### 1. Open the R Project
+
+Open `DataVis(CW-1).Rproj` in **RStudio**.
+
+### 2. Clean the Data
+
+Run the `Aircrash.R` script to preprocess the dataset.
+
+### 3. (Optional) Launch the Dashboard
+
+If using the Shiny dashboard:
 ```r
-shiny::runApp()
-Ensure the www/ folder remains in the same directory — it powers the visual media inside the app.
+shiny::runApp('airplane-crash-dashboard.r')
+````
 
-✍️ Author
-Afra Adnan Qadir
+> ⚠️ Make sure the `www/` folder is in the same directory to display images/videos properly.
+
+---
+
+## 👩‍💻 Author
+
+**Afra Adnan Qadir**
 BSc Software Engineering – University of Nottingham Malaysia
-LinkedIn | GitHub
+📧 [afraadnan223@gmail.com](mailto:afraadnan223@gmail.com)
+🔗 [LinkedIn](https://www.linkedin.com/in/afraadnan)
+💻 [GitHub](https://github.com/Afraadnan)
 
-📜 License
-MIT License. Educational use only. Attribution appreciated.
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+Feel free to use, modify, and share — attribution appreciated!
+
+
+
+
