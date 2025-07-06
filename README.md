@@ -4,7 +4,7 @@
 
 ## 📊 Overview
 
-This project is a data visualization of global airplane crashes from **1908 to 2024**, built using **R** and real-world aviation data from [planecrashinfo.com](http://www.planecrashinfo.com/database.html). It explores patterns across time, geography, causes, aircraft types, and fatality rates through impactful visualizations and analysis.
+This project is a data visualization of global airplane crashes from **1908 to 2024**, built using **R** and real-world aviation data from [planecrashinfo.com](https://www.kaggle.com/datasets). It explores patterns across time, geography, causes, aircraft types, and fatality rates through impactful visualizations and analysis.
 
 ---
 
@@ -47,7 +47,7 @@ This project is a data visualization of global airplane crashes from **1908 to 2
 - **Data Wrangling**: `dplyr`, `lubridate`  
 - **Visualization**: `ggplot2`, `leaflet`, `wordcloud`  
 - **Dashboard (optional)**: R Shiny  
-- **Data Source**: [planecrashinfo.com](http://www.planecrashinfo.com/database.html)
+- **Data Source**: [planecrashinfo.com](https://www.kaggle.com/datasets)
 
 ---
 
@@ -116,7 +116,7 @@ BSc Software Engineering – University of Nottingham Malaysia
 ## 📜 License
 
 This project is licensed under the **MIT License**.
-Feel free to use, modify, and share — attribution appreciated!
+Feel free to use, modify, and share attribution appreciated!
 
 
 
